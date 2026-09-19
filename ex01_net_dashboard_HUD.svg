@@ -1,0 +1,303 @@
+<svg width="1200" height="1580" viewBox="0 0 1200 1580"
+     xmlns="http://www.w3.org/2000/svg">
+
+  <title>EX01//NET — HUD Dashboard</title>
+  <desc>Unified sci-fi developer portfolio dashboard.</desc>
+
+  <defs>
+    <style>
+      .bg{fill:#050505}
+      .panel{fill:#090909;stroke:#89C400;stroke-width:2}
+      .green{fill:#89C400}
+      .white{fill:#fff}
+      .gray{fill:#555}
+      .muted{fill:#8f8f8f}
+      .mono{font-family:monospace}
+      .title{fill:#89C400;font-family:monospace;font-size:24px;font-weight:bold}
+      .body{fill:#fff;font-family:monospace;font-size:16px}
+      .small{fill:#8f8f8f;font-family:monospace;font-size:12px}
+      .line{stroke:#89C400;stroke-opacity:.3}
+      .scan{fill:#89C400;opacity:.12}
+    </style>
+  </defs>
+
+  <!-- BACKGROUND -->
+  <rect width="1200" height="1580" class="bg"/>
+
+  <!-- subtle grid -->
+  <g stroke="#89C400" stroke-opacity=".035">
+    <path d="M0 80H1200 M0 160H1200 M0 240H1200 M0 320H1200
+             M0 400H1200 M0 480H1200 M0 560H1200 M0 640H1200
+             M0 720H1200 M0 800H1200 M0 880H1200 M0 960H1200
+             M0 1040H1200 M0 1120H1200 M0 1200H1200 M0 1280H1200
+             M0 1360H1200 M0 1440H1200 M0 1520H1200"/>
+    <path d="M80 0V1580 M160 0V1580 M240 0V1580 M320 0V1580
+             M400 0V1580 M480 0V1580 M560 0V1580 M640 0V1580
+             M720 0V1580 M800 0V1580 M880 0V1580 M960 0V1580
+             M1040 0V1580 M1120 0V1580"/>
+  </g>
+
+  <!-- =========================================================
+       HEADER — ALIEN CORE + SYSTEM ID
+       ========================================================= -->
+
+  <g id="header">
+    <rect x="20" y="20" width="1160" height="260" rx="16" class="panel"/>
+
+    <!-- Alien Core -->
+    <g transform="translate(55 48)">
+      <ellipse cx="105" cy="105" rx="70" ry="82"
+               fill="#0b0b0b" stroke="#89C400" stroke-width="3"/>
+      <ellipse cx="72" cy="105" rx="19" ry="31" class="green"/>
+      <ellipse cx="138" cy="105" rx="19" ry="31" class="green"/>
+      <circle cx="72" cy="105" r="7" class="bg"/>
+      <circle cx="138" cy="105" r="7" class="bg"/>
+      <path d="M60 151 Q105 183 150 151"
+            stroke="#89C400" stroke-width="4" fill="none"/>
+      <text x="105" y="215" text-anchor="middle"
+            class="green mono" font-size="14">ALIEN CORE</text>
+    </g>
+
+    <!-- Header text -->
+    <text x="280" y="72" class="title" font-size="30">EX01//NET</text>
+    <text x="280" y="102" class="small">SECURE DEVELOPMENT ENVIRONMENT</text>
+
+    <line x1="280" y1="125" x2="1140" y2="125" class="line"/>
+
+    <text x="280" y="160" class="body">OPERATOR........ MAYUMI</text>
+    <text x="280" y="190" class="body">ROLE............ FRONT-END DEVELOPER TRAINEE</text>
+    <text x="280" y="220" class="body">SYSTEM.......... DEVELOPING</text>
+    <text x="720" y="160" class="green mono" font-size="15">● STATUS: ONLINE</text>
+    <text x="720" y="190" class="small">BUILD: v0.0.1</text>
+    <text x="720" y="220" class="small">ID: EX01-007</text>
+
+    <!-- scanner -->
+    <rect x="25" y="25" width="1150" height="2" class="scan">
+      <animate attributeName="y" from="25" to="275" dur="3s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- =========================================================
+       BOOT TERMINAL — LEFT / SYSTEM DIAGNOSTICS — RIGHT
+       ========================================================= -->
+
+  <g id="system-row">
+
+    <!-- BOOT -->
+    <g id="boot" transform="translate(20 300)">
+      <rect width="760" height="330" rx="15" class="panel"/>
+      <text x="25" y="38" class="title">EX01//NET TERMINAL</text>
+      <text x="575" y="38" class="small">BOOT SEQUENCE</text>
+      <line x1="20" y1="55" x2="740" y2="55" class="line"/>
+
+      <rect x="25" y="75" width="710" height="12" rx="2" fill="#222"/>
+      <rect x="25" y="75" width="0" height="12" rx="2" class="green">
+        <animate attributeName="width"
+          values="0;100;230;380;520;710"
+          keyTimes="0;.15;.30;.50;.70;1"
+          dur="6s" repeatCount="indefinite"/>
+      </rect>
+
+      <g class="mono" font-size="14" fill="#A7A7A7">
+        <text x="25" y="120">[ BOOT ] Loading EX01 kernel...
+          <animate attributeName="opacity" values="0;1;1" keyTimes="0;.12;1"
+                   dur="6s" repeatCount="indefinite"/>
+        </text>
+        <text x="25" y="150">[ SYS  ] Initializing secure environment...
+          <animate attributeName="opacity" values="0;0;1;1"
+                   keyTimes="0;.16;.18;1" dur="6s" repeatCount="indefinite"/>
+        </text>
+        <text x="25" y="180">[ SYS  ] Verifying encryption keys...
+          <animate attributeName="opacity" values="0;0;1;1"
+                   keyTimes="0;.30;.32;1" dur="6s" repeatCount="indefinite"/>
+        </text>
+        <text x="25" y="210">[ NET  ] Connecting to remote nodes...
+          <animate attributeName="opacity" values="0;0;1;1"
+                   keyTimes="0;.44;.46;1" dur="6s" repeatCount="indefinite"/>
+        </text>
+        <text x="25" y="240">[ AUTH ] Operator verified : MAYUMI
+          <animate attributeName="opacity" values="0;0;1;1"
+                   keyTimes="0;.72;.74;1" dur="6s" repeatCount="indefinite"/>
+        </text>
+        <text x="25" y="270">[ DONE ] Terminal ready.
+          <animate attributeName="opacity" values="0;0;1;1"
+                   keyTimes="0;.86;.88;1" dur="6s" repeatCount="indefinite"/>
+        </text>
+      </g>
+
+      <text x="25" y="305" class="green mono" font-size="16">mayumi@ex01:~$ █
+        <animate attributeName="opacity" values="1;1;0;0;1"
+                 keyTimes="0;.45;.5;.95;1" dur="1s" repeatCount="indefinite"/>
+      </text>
+    </g>
+
+    <!-- DIAGNOSTICS -->
+    <g id="diagnostics" transform="translate(800 300)">
+      <rect width="380" height="330" rx="15" class="panel"/>
+      <text x="22" y="38" class="title" font-size="20">DIAGNOSTICS</text>
+      <text x="275" y="38" class="small">CORE: EX01</text>
+      <line x1="20" y1="55" x2="360" y2="55" class="line"/>
+
+      <text x="25" y="95" class="body" font-size="14">OS........ EX01//NET</text>
+      <text x="25" y="130" class="body" font-size="14">SIGNAL</text>
+
+      <rect x="25" y="145" width="300" height="10" fill="#222"/>
+      <rect x="25" y="145" width="300" height="10" class="green">
+        <animate attributeName="opacity" values="1;.5;1"
+                 dur="1.5s" repeatCount="indefinite"/>
+      </rect>
+      <text x="335" y="154" class="green mono" font-size="12">100%</text>
+
+      <text x="25" y="195" class="body" font-size="14">CONNECTION... STABLE</text>
+      <text x="25" y="230" class="green mono" font-size="14">THREAT....... NONE</text>
+      <text x="25" y="265" class="green mono" font-size="14">REPOSITORIES. LOADING...</text>
+      <text x="25" y="300" class="small">SECURITY CHANNEL: ACTIVE</text>
+    </g>
+  </g>
+
+  <!-- =========================================================
+       IDENTITY — FULL WIDTH
+       ========================================================= -->
+
+  <g id="identity" transform="translate(20 650)">
+    <rect width="1160" height="250" rx="15" class="panel"/>
+    <text x="25" y="40" class="title">IDENTITY_PROTOCOL</text>
+    <text x="1020" y="40" class="small">ID: EX01-007</text>
+    <line x1="20" y1="58" x2="1140" y2="58" class="line"/>
+
+    <g class="body" font-size="15">
+      <text x="30" y="95">NAME.............. MAYUMI</text>
+      <text x="30" y="125">SPECIES........... HUMAN</text>
+      <text x="30" y="155">OCCUPATION........ FRONT-END DEVELOPER TRAINEE</text>
+      <text x="30" y="185">SKILLS............ HTML • CSS</text>
+      <text x="30" y="215">LEARNING.......... JAVASCRIPT</text>
+
+      <text x="600" y="95">SYSTEM_CORE....... DEVELOPING</text>
+      <text x="600" y="125">KNOWLEDGE_BASE.... EXPANDING</text>
+      <text x="600" y="155">OBJECTIVE......... BUILD CONSISTENT PROJECTS</text>
+      <text x="600" y="185" class="green">MISSION........... LEARN • BUILD • EVOLVE</text>
+    </g>
+
+    <rect x="25" y="25" width="1150" height="2" class="scan">
+      <animate attributeName="y" from="25" to="240" dur="3s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- =========================================================
+       MODULES — LEFT / MISSION — RIGHT
+       ========================================================= -->
+
+  <g id="development-row">
+
+    <!-- MODULES -->
+    <g id="modules" transform="translate(20 920)">
+      <rect width="560" height="390" rx="15" class="panel"/>
+      <text x="25" y="40" class="title">MODULES_LOADED</text>
+      <text x="420" y="40" class="small">STATUS: READY</text>
+      <line x1="20" y1="58" x2="540" y2="58" class="line"/>
+
+      <g class="body" font-size="15">
+        <text x="30" y="100">[✓] HTML............. ONLINE</text>
+        <text x="30" y="140">[✓] CSS.............. ONLINE</text>
+        <text x="30" y="180">[~] JAVASCRIPT....... LEARNING</text>
+        <text x="30" y="220">[✓] GIT / GITHUB..... CONNECTED</text>
+        <text x="30" y="260">[✓] VSCODE........... ACTIVE</text>
+        <text x="30" y="300">[~] FIGMA............ EXPLORING</text>
+        <text x="30" y="340">[ ] FRAMEWORKS</text>
+        <text x="30" y="375">[ ] APIs</text>
+      </g>
+
+      <circle cx="475" cy="180" r="48" fill="none" stroke="#89C400" stroke-width="2">
+        <animateTransform attributeName="transform" type="rotate"
+          from="0 475 180" to="360 475 180" dur="4s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="475" cy="180" r="12" class="green">
+        <animate attributeName="r" values="12;17;12" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <text x="475" y="245" text-anchor="middle" class="green mono" font-size="12">CORE</text>
+    </g>
+
+    <!-- MISSIONS -->
+    <g id="missions" transform="translate(600 920)">
+      <rect width="580" height="390" rx="15" class="panel"/>
+      <text x="25" y="40" class="title">MISSION_DATABASE</text>
+      <text x="485" y="40" class="small">ACTIVE: 04</text>
+      <line x1="20" y1="58" x2="560" y2="58" class="line"/>
+
+      <g class="mono" font-size="15">
+        <text x="25" y="100" fill="#89C400">[001] JAVASCRIPT EVOLUTION</text>
+        <text x="45" y="125" fill="#fff">&gt; Become proficient in JavaScript.</text>
+
+        <text x="25" y="170" fill="#89C400">[002] FRONT-END CREATION</text>
+        <text x="45" y="195" fill="#fff">&gt; Build complete Front-end projects.</text>
+
+        <text x="25" y="240" fill="#89C400">[003] INTERFACE</text>
+        <text x="45" y="265" fill="#fff">&gt; Create interfaces with personality.</text>
+
+        <text x="25" y="315" fill="#89C400">[004] FRONT-END DEVELOPER</text>
+        <text x="45" y="340" fill="#fff">&gt; Build. Practice. Evolve.</text>
+      </g>
+
+      <circle cx="510" cy="110" r="26" fill="none" stroke="#89C400" stroke-width="2">
+        <animateTransform attributeName="transform" type="rotate"
+          from="0 510 110" to="360 510 110" dur="5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="510" cy="110" r="7" class="green">
+        <animate attributeName="opacity" values="1;.2;1" dur="1s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+
+  <!-- =========================================================
+       NETWORK MAP — FULL WIDTH
+       ========================================================= -->
+
+  <g id="network" transform="translate(20 1330)">
+    <rect width="1160" height="230" rx="15" class="panel"/>
+    <text x="25" y="40" class="title">NETWORK_MAP</text>
+    <text x="1020" y="40" class="small">SIGNAL: ACTIVE</text>
+    <line x1="20" y1="58" x2="1140" y2="58" class="line"/>
+
+    <!-- Nodes -->
+    <line x1="270" y1="115" x2="520" y2="115" stroke="#89C400">
+      <animate attributeName="stroke-opacity" values=".2;1;.2" dur="2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="640" y1="115" x2="890" y2="115" stroke="#89C400">
+      <animate attributeName="stroke-opacity" values="1;.2;1" dur="2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="580" y1="135" x2="580" y2="195" stroke="#89C400">
+      <animate attributeName="stroke-opacity" values=".2;1;.2" dur="1.5s" repeatCount="indefinite"/>
+    </line>
+
+    <circle cx="250" cy="115" r="20" class="green">
+      <animate attributeName="r" values="20;25;20" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="580" cy="115" r="35" class="green">
+      <animate attributeName="r" values="35;42;35" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="910" cy="115" r="20" class="green">
+      <animate attributeName="r" values="20;25;20" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="580" cy="195" r="15" class="green">
+      <animate attributeName="opacity" values="1;.3;1" dur="1.8s" repeatCount="indefinite"/>
+    </circle>
+
+    <text x="250" y="155" text-anchor="middle" class="small">IDENTITY</text>
+    <text x="580" y="122" text-anchor="middle" fill="#050505"
+          class="mono" font-size="12">CORE</text>
+    <text x="910" y="155" text-anchor="middle" class="small">PROJECTS</text>
+    <text x="580" y="220" text-anchor="middle" class="small">GROWTH</text>
+
+    <circle cx="580" cy="115" r="35" fill="none" stroke="#89C400">
+      <animate attributeName="r" from="35" to="90" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values=".8;0" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- FOOTER -->
+  <g id="footer">
+    <text x="25" y="1575" class="small">EX01//NET • SECURE DEVELOPMENT ENVIRONMENT • SESSION ACTIVE</text>
+    <text x="1175" y="1575" text-anchor="end" class="green mono" font-size="12">ONLINE</text>
+  </g>
+
+</svg>
