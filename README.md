@@ -3,5 +3,4 @@
 <img
   src="./assets/ex01_net_dashboard_HUD.svg"
   alt="EX01//NET HUD"
-  width="1200"
->
+  width="1200">
